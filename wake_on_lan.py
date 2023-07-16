@@ -16,8 +16,8 @@ def wake_on_lan(mac_address, ip_address, port=7):
 
 # Bilgisayarın MAC adresi ve IP adresini burada değiştirebilirsiniz
 
-mac_address = '74:56:3C:73:4C:F6'
-ip_address = '192.168.1.144'
+mac_address = 'XX:XX:XX:XX:XX:XX'
+ip_address = 'XXX.XXX.X.XX'
 
 wake_on_lan(mac_address, ip_address)
 
