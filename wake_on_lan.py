@@ -15,35 +15,10 @@ def wake_on_lan(mac_address, ip_address, port=7):
     sock.sendto(magic_packet, (ip_address, port))
     sock.close()
 
-def send_wol():
-    mac_address = entry_mac.get()
-    ip_address = entry_ip.get()
-    wake_on_lan(mac_address, ip_address)
-    status_label.config(text="WOL Paketi Gönderildi!")
+# Bilgisayarın MAC adresi ve IP adresini burada değiştirebilirsiniz
 
-# GUI oluşturma
-app = tk.Tk()
-app.title("Wake On LAN Uygulaması")
+mac_address = '74:56:3C:73:4C:F6'
+ip_address = '192.168.1.144'
 
-# MAC Adresi Giriş Kutusu
-label_mac = tk.Label(app, text="MAC Adresi:")
-label_mac.pack()
-entry_mac = tk.Entry(app)
-entry_mac.pack()
+wake_on_lan(mac_address, ip_address)
 
-# IP Adresi Giriş Kutusu
-label_ip = tk.Label(app, text="IP Adresi:")
-label_ip.pack()
-entry_ip = tk.Entry(app)
-entry_ip.pack()
-
-# Gönder Butonu
-send_button = tk.Button(app, text="WOL Paketi Gönder", command=send_wol)
-send_button.pack()
-
-# Durum Etiketi
-status_label = tk.Label(app, text="")
-status_label.pack()
-
-# Uygulamayı başlat
-app.mainloop()
